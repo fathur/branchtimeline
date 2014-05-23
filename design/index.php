@@ -19,11 +19,32 @@
 </head>
 <body>
 
-	<div class='container-fluid'></div>
+	<div class='container-fluid'>
+		<?php for ($i=1; $i < 20; $i++) : 			
+			$classrow = ($i%2) ? 'rw-genap' : 'rw-ganjil' ;
+		?>
+			
+		<div class='row <?php echo $classrow; ?>'>
+			<div class='col-md-2'><?php echo $i; ?></div>
+			<div class='col-md-8'>
+				<div class='rw-title'>Sejarah harus diingat</div>
+			</div>
+			<div class='col-md-1'>Comment</div>
+			<div class='col-md-1'>Bookmark</div>
+		</div>
+		
+		<?php endfor; ?>
+	</div>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="js/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
+
+	<script>
+	$('.rw-title').click(function() {
+		$(this).height(100);
+	});
+	</script>
 </body>
 </html>
