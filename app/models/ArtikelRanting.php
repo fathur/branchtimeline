@@ -1,2 +1,4 @@
 <?php
-class ArtikelRanting extends Eloquent {}
+class ArtikelRanting extends Eloquent {
+	protected $table	= 'artikel_ranting';
+}

@@ -1,2 +1,4 @@
 <?php
-class Ranting extends Eloquent {}
+class Ranting extends Eloquent {
+	protected $table = 'ranting';
+}

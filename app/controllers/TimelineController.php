@@ -22,6 +22,12 @@ class TimelineController extends BaseController {
 	}
 	
 	public function getSejarah($topic) {
-		return View::make('timeline.sejarah');
+		//return View::make('timeline.sejarah');
+		$a = Topik::all();
+		
+		//dd($a);
+		foreach ($a as $b) {
+			dd($b->id);
+		}
 	}
 }
