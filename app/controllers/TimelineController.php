@@ -2,12 +2,12 @@
 class TimelineController extends BaseController {
 	
 	public function getIndex() {
-		return "A";
+		return View::make('timeline.topics');
 	}
 	
 	// Memperlihatkan halaman depan banget
 	// daftar topik
-	public function getTopic() {
+	public function getTopic($a) {
 		
 	}
 	
@@ -21,7 +21,7 @@ class TimelineController extends BaseController {
 		
 	}
 	
-	public function getHistory($topic) {
-		
+	public function getSejarah($topic) {
+		return View::make('timeline.sejarah');
 	}
 }
