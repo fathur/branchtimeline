@@ -8,6 +8,13 @@ class FakerSeeder extends Seeder {
 	
 	public function run() {
 		
+		Topik::truncate();
+		Ranting::truncate();
+		Artikel::truncate();
+		ArtikelRanting::truncate();
+		Pustaka::truncate();
+		Komentar::truncate();
+		
 		$faker = Faker\Factory::create();
 		
 		for ($i=1;$i<=5;$i++) {
