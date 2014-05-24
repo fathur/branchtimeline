@@ -17,7 +17,7 @@ class CreateTopikTable extends Migration {
 			$table->increments('id')->unsigned();
 			$table->integer('pembuat_id')->unsigned();
 			$table->string('judul')->index();
-			$table->string('slug');
+			$table->string('slug')->unique();
 			$table->text('deskripsi');
 			$table->timestamps();
 			$table->softDeletes();
