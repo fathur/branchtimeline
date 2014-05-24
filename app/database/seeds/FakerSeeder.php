@@ -1,4 +1,5 @@
 <?php
+
 class FakerSeeder extends Seeder {
 	
 	private $topikId	= array();
@@ -10,8 +11,13 @@ class FakerSeeder extends Seeder {
 		$faker = Faker\Factory::create();
 		
 		for ($i=1;$i<=5;$i++) {
+			
+			$judul = $faker->sentence;
+			$slugJudul = Str::slug($judul);
+			
 			Topik::create(array(
-				'judul' 		=> $faker->sentence,
+				'judul' 		=> $judul,
+				'slug'			=> $slugJudul,
 				'deskripsi' 	=> $faker->paragraph
 			));
 		}

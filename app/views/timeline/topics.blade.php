@@ -15,17 +15,17 @@ Ranting Waktu
 <div class="row sr-only">
 	<div class="col-md-2">
 		<img src="{{asset('assets/img/rantingwaktu.png')}}" class="img-responsive" />
+		<img src="{{asset('assets/img/Desert.jpg')}}" class="img-responsive" />
 	</div>
 </div>
 
 <div class="row">
-	@for($i=1;$i<=10;$i++)
+	@foreach($topics as $topic)
 	<div class="col-xs-6 rw-topic">
-		<a href="/sejarah/s">
-			<img src="{{asset('assets/img/Desert.jpg')}}" class="img-responsive" />
-		</a>
+		<p>{{{$topic->judul}}}</p>
+		{{link_to('sejarah/'.$topic->slug)}}
 	</div>
-	@endfor
+	@endforeach
 </div>
 @stop
 

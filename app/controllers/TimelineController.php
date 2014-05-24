@@ -2,7 +2,9 @@
 class TimelineController extends BaseController {
 	
 	public function getIndex() {
-		return View::make('timeline.topics');
+		$topics = Topik::all();
+		return View::make('timeline.topics')
+			->with('topics', $topics);
 	}
 	
 	// Memperlihatkan halaman depan banget
