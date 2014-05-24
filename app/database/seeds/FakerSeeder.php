@@ -19,12 +19,12 @@ class FakerSeeder extends Seeder {
 		
 		for ($i=1;$i<=5;$i++) {
 			
-			$judul = $faker->sentence;
-			$slugJudul = Str::slug($judul);
+			$judulTopik = $faker->sentence;
+			$slugTopik = Str::slug($judulTopik);
 			
 			Topik::create(array(
-				'judul' 		=> $judul,
-				'slug'			=> $slugJudul,
+				'judul' 		=> $judulTopik,
+				'slug'			=> $slugTopik,
 				'deskripsi' 	=> $faker->paragraph
 			));
 		}
@@ -37,9 +37,13 @@ class FakerSeeder extends Seeder {
 		}
 		
 		for ($i=1;$i<=50;$i++) {
+			$namaRanting = $faker->word;
+			$slugRanting = Str::slug($namaRanting);
+			
 			Ranting::create(array(
 				'topik_id'	=> $faker->randomElement($this->topikId),
-				'nama'		=> $faker->word,
+				'nama'		=> $namaRanting,
+				'slug'		=> $slugRanting,
 				'deskripsi'	=> $faker->paragraph()
 			));
 		}
@@ -47,9 +51,14 @@ class FakerSeeder extends Seeder {
 		$this->command->info('Tabel ranting sudah di seeding data palsu sebanyak 50 record');
 		
 		for ($i=1;$i<=300;$i++) {
+			
+			$judulArtikel = $faker->sentence();
+			$slugArtikel = Str::slug($judulArtikel);
+
 			Artikel::create(array(
 				'topik_id'	=> $faker->randomElement($this->topikId),
-				'judul'		=> $faker->sentence(),
+				'judul'		=> $judulArtikel,
+				'slug'		=> $slugArtikel,
 				'isi'		=> $faker->text(),
 				'tanggal_peristiwa'	=> $faker->dateTime->format('Y-m-d H:i:s'),
 				'status'	=> $faker->randomElement(array(

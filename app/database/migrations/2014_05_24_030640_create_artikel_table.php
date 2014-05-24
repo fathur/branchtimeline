@@ -17,6 +17,7 @@ class CreateArtikelTable extends Migration {
 			$table->increments('id')->unsigned();
 			$table->integer('topik_id')->unsigned()->index();
 			$table->string('judul')->index();
+			$table->string('slug')->unique();
 			$table->text('isi');			
 			$table->dateTime('tanggal_peristiwa');
 			$table->string('status',10);

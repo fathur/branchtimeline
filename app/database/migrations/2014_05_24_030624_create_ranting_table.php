@@ -18,6 +18,7 @@ class CreateRantingTable extends Migration {
 			$table->integer('topik_id')->unsigned()->index();
 			$table->integer('pembuat_id')->unsigned();
 			$table->string('nama',50)->index();
+			$table->string('slug')->unique();
 			$table->text('deskripsi');
 			$table->timestamps();
 			$table->softDeletes();
