@@ -24,7 +24,7 @@ class FakerSeeder extends Seeder {
 			
 			Topik::create(array(
 				'judul' 		=> $judulTopik,
-				'slug'			=> $slugTopik,
+				'slug'			=> $slugTopik . '-' . rand(1,1000),
 				'deskripsi' 	=> $faker->paragraph
 			));
 		}
@@ -43,7 +43,7 @@ class FakerSeeder extends Seeder {
 			Ranting::create(array(
 				'topik_id'	=> $faker->randomElement($this->topikId),
 				'nama'		=> $namaRanting,
-				'slug'		=> $slugRanting,
+				'slug'		=> $slugRanting . '-' . rand(1,1000),
 				'deskripsi'	=> $faker->paragraph()
 			));
 		}
@@ -58,7 +58,7 @@ class FakerSeeder extends Seeder {
 			Artikel::create(array(
 				'topik_id'	=> $faker->randomElement($this->topikId),
 				'judul'		=> $judulArtikel,
-				'slug'		=> $slugArtikel,
+				'slug'		=> $slugArtikel . '-' . rand(1,1000),
 				'isi'		=> $faker->text(),
 				'tanggal_peristiwa'	=> $faker->dateTime->format('Y-m-d H:i:s'),
 				'status'	=> $faker->randomElement(array(
