@@ -19,6 +19,7 @@ class CreateTopikTable extends Migration {
 			$table->string('judul')->index();
 			$table->text('deskripsi');
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

@@ -21,6 +21,7 @@ class CreateArtikelTable extends Migration {
 			$table->dateTime('tanggal_peristiwa');
 			$table->string('status',10);
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

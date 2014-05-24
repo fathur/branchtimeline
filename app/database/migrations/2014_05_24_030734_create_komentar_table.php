@@ -18,7 +18,8 @@ class CreateKomentarTable extends Migration {
 			$table->integer('user_id')->unsigned()->index();
 			$table->integer('artikel_id')->unsigned()->index();
 			$table->text('isi');
-			$table->timestamps();			
+			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

@@ -17,6 +17,7 @@ class CreateArtikelrantingTable extends Migration {
 			$table->integer('ranting_id')->unsigned();
 			$table->integer('artikel_id')->unsigned();
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

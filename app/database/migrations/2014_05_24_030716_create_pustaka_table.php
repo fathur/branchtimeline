@@ -19,6 +19,7 @@ class CreatePustakaTable extends Migration {
 			$table->string('sumber');
 			$table->date('tanggal_kutip');
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 
